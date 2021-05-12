@@ -18,5 +18,10 @@ public class EmailSenderService {
         helper.addAttachment("template-cover.png", new ClassPathResource("javabydeveloper-email.PNG"));
         Context context = new Context();
         context.setVariables(mail.getProps());
+        String html = templateEngine.process("newsletter-template", context);
+        helper.setTo(mail.getMailTo());
+        helper.setText(html, true);
+        helper.setSubject(mail.getSubject());
+        helper.setFrom(mail.getFrom());
 
     }
