@@ -1,8 +1,16 @@
 package com.example.email.mail.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.thymeleaf.spring5.SpringTemplateEngine;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class EmailSenderService {
     @Autowired
@@ -23,5 +31,7 @@ public class EmailSenderService {
         helper.setText(html, true);
         helper.setSubject(mail.getSubject());
         helper.setFrom(mail.getFrom());
+        emailSender.send(message);
+    }
 
     }
