@@ -1,6 +1,6 @@
-package com.example.email.mail.service;
+package com.javabydeveloper.mail.service;
 
-import com.example.email.model.Mail;
+import com.javabydeveloper.model.Mail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;

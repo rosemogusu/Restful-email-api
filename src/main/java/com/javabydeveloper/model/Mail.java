@@ -1,4 +1,4 @@
-package com.example.email.model;
+package com.javabydeveloper.model;
 
 import java.util.List;
 import java.util.Map;
